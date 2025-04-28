@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://csu6qmnrdx3xb"]
+
+[ext_resource type="Texture2D" uid="uid://xnewlgt7i74q" path="res://teste345.png" id="2_j2q8x"]
+
+[sub_resource type="GDScript" id="GDScript_sy5k4"]
+script/source = "extends Node
+"
+
+[sub_resource type="GDScript" id="GDScript_j2q8x"]
+script/source = "
+
+extends Sprite2D
+
+func _init():
+	print(\"hello world\")
+var speed = 400
+var angular_speed = PI
+
+func _process(delta):
+	rotation += angular_speed * delta
+	
+	var velocity = Vector2.UP.rotated(rotation) * speed
+	position += velocity * delta
+"
+
+[node name="Node" type="Node"]
+script = SubResource("GDScript_sy5k4")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "helo helo "
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(568.5, 310)
+scale = Vector2(1.34375, 1.375)
+texture = ExtResource("2_j2q8x")
+script = SubResource("GDScript_j2q8x")
