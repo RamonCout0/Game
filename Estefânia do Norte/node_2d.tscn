@@ -1,21 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://wl2etcbcdgik"]
+[gd_scene load_steps=2 format=3 uid="uid://ble5ein5wyu1g"]
 
-[ext_resource type="Script" uid="uid://2h4xxrau0hh5" path="res://Player/movimentacao.cs" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://bqsw00hht8hxe" path="res://sprites/RoseSword.png" id="2_0e48y"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(28, 37)
+[sub_resource type="TileSet" id="TileSet_y32ns"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_wtcfe")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_wtcfe")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(1, 5)
-texture = ExtResource("2_0e48y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-1, 2)
-shape = SubResource("RectangleShape2D_epypp")
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_y32ns")
+rendering_quadrant_size = 32
+format = 2
